@@ -1,0 +1,9 @@
+{ "ucp": { "server_number": "1",
+           "machine_type": "n1-standard-2"},
+  "dtr": { "server_number": "2",
+           "machine_type": "n1-standard-2"},
+  "lwr": { "server_number": "3",
+           "machine_type": "n1-standard-2"},
+  "wwr": { "server_number": "4" ,
+           "machine_type": "n1-standard-2"}
+}

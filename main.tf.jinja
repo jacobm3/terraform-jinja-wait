@@ -1,0 +1,26 @@
+{% for key, value in data.items() %}
+
+module "linux{{ key }}" {
+    source = "./modules/linux"
+    SSRID = "${var.SSRID}"
+    environment = "${var.environment}"
+    csp = "${var.csp}"
+    ServerType = "{{ key }}"
+    servers = {{ value["server_number"] }}
+    machine_type = "{{ value["machine_type"] }}"
+    zone = "${var.zone}"
+    linux_image = "${var.linux_image}"
+    bootdisk_size = "${var.bootdisk_size}"
+    pd_size = "${var.pd_size}"
+    pd_type = "${var.pd_type}"
+    vnet = "${var.vnet[var.environment]}"
+    subnet = "${var.subnet[var.environment]}"
+    CostCenter = "${var.CostCenter}"
+    Creator = "${var.Creator}"
+    default_ssh_public_key = "${var.default_ssh_public_key}"
+    salt_pw = "${var.salt_pw}"
+    salt_url = "${var.salt_url[var.environment]}"
+    salt_master = "${var.salt_master[var.environment]}"
+}
+
+{% endfor %}
